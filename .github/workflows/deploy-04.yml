@@ -19,3 +19,5 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run Script
         run: python main.py --accounts ${{ secrets.ACCOUNT_04 }} --headless --fast --privacy
+      - name: Save Result
+        run: python save.py ${{ secrets.DB_HOST }} ${{ secrets.DB_USER }} ${{ secrets.DB_PASS }} ${{ secrets.DB_NAME }}
